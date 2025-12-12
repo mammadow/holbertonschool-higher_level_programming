@@ -19,4 +19,4 @@ class MyInt(int):
         """
         Inverts != operator.
         """
-        return super().__eq__(otherg
+        return super().__eq__(other)
