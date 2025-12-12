@@ -37,5 +37,7 @@ def main():
         print_usage_and_exit("N must be at least 4")
 
     solve_nqueens(n, 0, [])
+
+
 if __name__ == "__main__":
     main()
