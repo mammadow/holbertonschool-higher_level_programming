@@ -3,6 +3,7 @@
 Defines a MyInt class that inverts == and != operators.
 """
 
+
 class MyInt(int):
     """
     Rebel integer class that inverts equality operators.
@@ -18,4 +19,4 @@ class MyInt(int):
         """
         Inverts != operator.
         """
-        return super().__eq__(other)
+        return super().__eq__(otherg
