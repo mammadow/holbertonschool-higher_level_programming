@@ -57,7 +57,7 @@ class Rectangle:
         """
         Initializes a new square instance.
         """
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.__width = width
         self.__height = height
 
@@ -74,5 +74,5 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
