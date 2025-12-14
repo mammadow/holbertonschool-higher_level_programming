@@ -2,6 +2,7 @@
 """Script that adds command-line arguments to a list and saves it to a JSON file."""
 
 import sys
+import os
 
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
