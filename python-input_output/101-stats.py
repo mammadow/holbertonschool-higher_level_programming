@@ -13,40 +13,42 @@ def print_stats(total_size, status_counts):
         if status_counts[status] > 0:
             print("{}: {}".format(status, status_counts[status]))
 
-total_size = 0
-line_count = 0
-status_counts = {
-    "200": 0,
-    "301": 0,
-    "400": 0,
-    "401": 0,
-    "403": 0,
-    "404": 0,
-    "405": 0,
-    "500": 0
-}
 
-try:
-    for line in sys.stdin:
-        parts = line.split()
+if __name__ == "__main__":
+    total_size = 0
+    line_count = 0
+    status_counts = {
+        "200": 0,
+        "301": 0,
+        "400": 0,
+        "401": 0,
+        "403": 0,
+        "404": 0,
+        "405": 0,
+        "500": 0
+    }
 
-        if len(parts) >= 2:
-            status = parts[-2]
-            size = parts[-1]
+    try:
+        for line in sys.stdin:
+            parts = line.split()
 
-            if status in status_counts:
-                status_counts[status] += 1
+            if len(parts) >= 2:
+                status = parts[-2]
+                size = parts[-1]
 
-            try:
-                total_size += int(size)
-            except Exception:
-                pass
+                if status in status_counts:
+                    status_counts[status] += 1
 
-        line_count += 1
+                try:
+                    total_size += int(size)
+                except Exception:
+                    pass
 
-        if line_count % 10 == 0:
-            print_stats(total_size, status_counts)
+            line_count += 1
 
-except KeyboardInterrupt:
-    print_stats(total_size, status_counts)
-    raise
+            if line_count % 10 == 0:
+                print_stats(total_size, status_counts)
+
+    except KeyboardInterrupt:
+        print_stats(total_size, status_counts)
+        raise
