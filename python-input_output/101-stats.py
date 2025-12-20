@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script reads stdin line by line and computes metrics
+This script reads stdin line by line and computes metrics.
+It prints statistics every 10 lines and upon keyboard interruption.
 """
 
 import sys
